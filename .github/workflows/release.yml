@@ -31,7 +31,7 @@ jobs:
         run: echo "RELEASE_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Install packages
-        run: sudo apt-get install bash build-essential curl jq gcc git make musl-tools
+        run: sudo apt-get install bash build-essential curl jq gcc git make musl-tools gcc-arm-linux-gnueabihf
 
       - name: Set up Ruby 2.6
         uses: ruby/setup-ruby@v1
@@ -45,7 +45,7 @@ jobs:
         with:
           profile: complete
           toolchain: stable
-          target: armv7-unknown-linux-musl
+          target: armv7-unknown-linux-gnueabihf
 
       - name: Set up rust cache
         uses: Swatinem/rust-cache@v1
