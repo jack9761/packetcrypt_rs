@@ -1,8 +1,8 @@
-on:
-  workflow_dispatch
+on:  
   push:
     tags:
       - packetcrypt-v*.*.*
+  workflow_dispatch:
 
 jobs:
   release:
